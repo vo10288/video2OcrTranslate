@@ -94,7 +94,7 @@ Output
 License
 =======
 
-This project is released under the **GNU GPL v3 license**.
+This project is released under the **MIT**  **QUOTE THE AUTHOR**.
 
 Authors:
 
@@ -198,7 +198,7 @@ Archivio .zip con tutti i dati generati
 
 Licenza
 
-Questo progetto è rilasciato sotto licenza M.I.T. "cita l'autore".
+Questo progetto è rilasciato sotto licenza **M.I.T.** **"cita l'autore"**.
 
 Creato da:
 

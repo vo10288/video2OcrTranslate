@@ -1,6 +1,3 @@
-.. image:: https://tsurugi-linux.org/images/logo.png
-:alt: Tsurugi Linux Logo
-
 =========
 video2ocr
 

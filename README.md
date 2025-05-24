@@ -95,7 +95,7 @@ Archivio .zip con tutti i dati generati
 
 Licenza
 
-Questo progetto è rilasciato sotto licenza GNU GPL v3.
+Questo progetto è rilasciato sotto licenza M.I.T. "cita l'autore".
 
 Creato da:
 

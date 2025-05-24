@@ -1,9 +1,9 @@
 
 ![vision](https://github.com/user-attachments/assets/fa104162-df9c-41dd-8144-800027bafa4b)
 
-=========
-video2ocr
-=========
+
+=========     video2ocr      =========
+
 
 Advanced OCR from videos using Tesseract, FFmpeg, and automatic translation.
 

@@ -1,3 +1,106 @@
+=========
+video2ocr
+=========
+
+Advanced OCR from videos using Tesseract, FFmpeg, and automatic translation.
+
+This project allows you to:
+
+- Automatically extract frames from video files (.mp4, .mov, etc.) using FFmpeg
+- Perform OCR on each frame using Tesseract
+- Translate the recognized text into another language using Google Translate
+- Generate complete HTML reports with frame image, recognized text, and translated text
+- Compute SHA256 hashes and create `.zip` packages for forensic purposes
+
+Requirements
+============
+
+- Python >= 3.9
+
+Install Python packages:
+
+.. code-block:: bash
+
+   pip install -r requirements.txt
+
+External requirements (FFmpeg and Tesseract)
+============================================
+
+⚠️ FFmpeg and Tesseract must be installed and accessible from the system PATH.
+
+Linux (Debian, Ubuntu, etc.)
+----------------------------
+
+Install with apt:
+
+.. code-block:: bash
+
+   sudo apt update
+   sudo apt install ffmpeg tesseract-ocr
+
+macOS (with Homebrew)
+---------------------
+
+Install with Homebrew:
+
+.. code-block:: bash
+
+   brew install ffmpeg tesseract
+
+Windows
+-------
+
+1. Download and install FFmpeg:  
+   https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip
+
+   - Extract it to `C:\ffmpeg`
+   - Add `C:\ffmpeg\bin` to the system PATH
+
+2. Download and install Tesseract OCR:  
+   https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe
+
+   - Install to `C:\Program Files\Tesseract-OCR`
+   - Add `C:\Program Files\Tesseract-OCR` to the system PATH
+
+Verify installation:
+
+.. code-block:: bash
+
+   ffmpeg -version
+   tesseract --version
+
+Usage
+=====
+
+.. code-block:: bash
+
+   python video2ocr.py --lang eng --framerate 5 --translate-language it
+
+Main options:
+
+- ``--lang``: OCR language for Tesseract (e.g. ``eng``, ``ita``, ``chi_sim``)
+- ``--framerate``: number of frames per second extracted from the video (default: 5)
+- ``--translate-language`` or ``-t``: language to translate the OCR text into
+- ``--langs``: list all languages available in your Tesseract installation
+
+Output
+======
+
+- HTML report with image, OCR text, and translated text
+- `.txt` files with the extracted and translated texts
+- CSV files with SHA256 hashes for forensic integrity
+- `.zip` archive with all generated data
+
+License
+=======
+
+This project is released under the **GNU GPL v3 license**.
+
+Authors:
+
+- Antonio 'Visi@n' Broi – antonio@broi.it
+
+
 =========   video2ocr   =========
 
 

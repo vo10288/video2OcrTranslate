@@ -1,6 +1,4 @@
-=========
-video2ocr
-=========
+=========   video2ocr   =========
 OCR avanzato da video con supporto a Tesseract, FFmpeg e traduzione automatica.
 
 Questo progetto consente di:

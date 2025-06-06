@@ -96,7 +96,7 @@ def create_html_report(lang, dest_lang, timestamp):
         f.write(f"<html><head><title>video2ocrTranslate {timestamp}</title></head><body>")
         f.write(f"<pre style='font-family: monospace;'>{ASCII_ART}</pre>")
         f.write(f"<h2>Report OCR e Traduzione</h2><table border=1>")
-        f.write("<tr><th>Frame</th><th>Testo OCR</th><th>Traduzione</th></tr>")
+        f.write("<tr><th>Frame</th><th>ORIGINAL TEXT OCR</th><th>TEXT TRANSLATED</th></tr>")
         for img in DIRS["images"].glob("*.png"):
             name = img.name.replace(".png", ".txt")
             txt_file = DIRS["ocr_output"] / name

@@ -1,7 +1,7 @@
 #!/home/vision/anaconda3/envs/py3.12/bin/python
+##!/opt/virtualenv/computer_vision/bin/python3
 
-
-# 20250604-h.23.40
+# 20250606
 # https://tsurugi-linux.org
 # by Visi@n
 # LICENSE: MIT
@@ -97,7 +97,7 @@ def create_html_report(lang, dest_lang, timestamp):
         f.write(f"<html><head><title>video2ocrTranslate {timestamp}</title></head><body>")
         f.write(f"<pre style='font-family: monospace;'>{ASCII_ART}</pre>")
         f.write(f"<h2>Report OCR e Traduzione</h2><table border=1>")
-        f.write("<tr><th>Frame</th><th>ORIGINAL TEXT OCR</th><th>TEXT TRANSLATED</th></tr>")
+        f.write("<tr><th>Frame</th><th>Testo OCR</th><th>Traduzione</th></tr>")
         for img in DIRS["images"].glob("*.png"):
             name = img.name.replace(".png", ".txt")
             txt_file = DIRS["ocr_output"] / name
@@ -105,8 +105,8 @@ def create_html_report(lang, dest_lang, timestamp):
             if txt_file.exists() and tr_file.exists():
                 f.write("<tr>")
                 f.write(f"<td><a target='_blank' href='02.images/{img.name}'><img width=300 src='02.images/{img.name}'></a></td>")
-                f.write(f"<td><a target='_blank' href='04.ocr_output/{txt_file.name}'>Testo</a><br><pre>{txt_file.read_text(encoding='utf-8')}</pre></td>")
-                f.write(f"<td><a target='_blank' href='05.translated_output/{tr_file.name}'>Traduzione</a><br><pre>{tr_file.read_text(encoding='utf-8')}</pre></td>")
+                f.write(f"<td><a target='_blank' href='04.ocr_output/{txt_file.name}'>Testo</a></td>")
+                f.write(f"<td><a target='_blank' href='05.translated_output/{tr_file.name}'>Traduzione</a></td>")
                 f.write("</tr>")
         f.write("</table></body></html>")
     if platform.system() == "Windows":
@@ -126,10 +126,10 @@ def final_zip_and_hash(timestamp, report_path):
     calculate_hashes([*WORKING_DIR.rglob("*.*")], WORKING_DIR / f"hash-final-{timestamp}.csv")
 
 def main():
-    parser = argparse.ArgumentParser(description="OCR from video with Tesseract, FFmpeg and Translate \n WARNING the googletrans Python Library use API google.com ")
-    parser.add_argument("--lang", type=str, default="eng", help="OCR Language for Tesseract ex. eng ")
-    parser.add_argument("--framerate", type=int, default=5, help="Framerate at second")
-    parser.add_argument("--translate-language", "-t", type=str, default="it", help="Destination Language ex. it")
+    parser = argparse.ArgumentParser(description="OCR da video con Tesseract, FFmpeg e traduzione")
+    parser.add_argument("--lang", type=str, default="eng", help="Lingua OCR per Tesseract")
+    parser.add_argument("--framerate", type=int, default=5, help="Frequenza di estrazione dei frame")
+    parser.add_argument("--translate-language", "-t", type=str, default="it", help="Lingua di destinazione per la traduzione")
     parser.add_argument("--langs", action="store_true", help="Elenca le lingue supportate da Tesseract")
     args = parser.parse_args()
 
